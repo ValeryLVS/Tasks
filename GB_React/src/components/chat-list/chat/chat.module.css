@@ -1,0 +1,28 @@
+.icon,
+.text {
+  color: #fff;
+}
+
+.text span {
+  font-size: 14px;
+}
+
+.description {
+  width: 100%;
+}
+
+.description .text:last-child {
+  text-align: right;
+}
+
+.removeIcon {
+  color: #bdbbbb;
+  display: none;
+}
+
+.item:hover .removeIcon {
+  display: block;
+}
+.item .removeIcon {
+  display: none;
+}
