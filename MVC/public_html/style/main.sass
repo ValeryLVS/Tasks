@@ -1,0 +1,756 @@
+@charset "UTF-8"
+$colorBlack: #1d1d1d
+$colorWhite: #ffffff
+$colorGrey: #131321
+$colorBlue: #023E8A
+$colorBlueLite: #0077B6
+$colorGreyLite: #8a8a8a
+$OpenSans: 'OpenSans'
+$RaleWay: 'Raleway'
+
+*
+  margin: 0
+  padding: 0
+
+.center
+  padding: 0 calc(50% - 570px)
+
+.centerText
+  text-align: center
+
+html
+  scroll-behavior: smooth
+
+a
+  text-decoration: none
+
+ul
+  list-style: none
+
+h1, h2, h3, h4, h5, p
+  font-family: $RaleWay
+
+header
+  background-color: $colorBlack
+
+.spanWhite
+  color: $colorWhite
+.spanBlue
+  color: $colorBlue
+.spanBlack
+  color: $colorBlack
+
+.headerUp
+  display: flex
+  justify-content: space-between
+  &__headerLeft
+    align-items: center
+    margin: 35px 40px 37px 3px
+    @media all and (max-width: 960px)
+      margin: 35px 0 37px 3px
+    &_block
+      padding-left: 14px
+    &_logo
+      width: 100px
+  &__headerRight
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+    &_phone
+      align-items: center
+      margin: 35px 0 37px 3px
+    @media all and (max-width: 960px)
+      display: none
+  &__links
+    width: 44px
+    height: 44px
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: $colorBlue
+    color: #ffffff
+    border-radius: 50%
+    font-size: 24px
+    margin: 5px
+    &_tm
+      background: none
+  &__links:hover
+    background-color: $colorBlueLite
+    animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both
+    @keyframes rotate-vert-center
+      0%
+        transform: rotateY(0)
+      100%
+        transform: rotateY(360deg)
+
+
+.nav
+  display: flex
+  justify-content: space-between
+  text-align: center
+  background-color: $colorBlue
+  &__left
+    &_link
+      display: flex
+      padding: 14px 30px
+    &_link:hover
+      background-color: $colorBlueLite
+      animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both
+      @keyframes rotate-vert-center
+        0%
+          transform: rotateY(0)
+        100%
+          transform: rotateY(360deg)
+  &__right
+    display: flex
+    align-items: center
+    padding: 0 5px
+    &_link
+      padding: 10px
+      font-size: 24px
+      color: #ffffff
+  &__right:hover
+    background-color: $colorBlueLite
+    animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both
+    @keyframes rotate-vert-center
+      0%
+          transform: rotateY(0)
+      100%
+        transform: rotateY(360deg)
+  @media all and (max-width: 980px)
+    display: none
+  &__admin
+    display: flex
+    justify-content: space-between
+    margin: 20px 0
+    @media all and (max-width: 480px)
+      flex-direction: column
+      align-items: center
+
+.menu
+  &__drop
+    position: absolute
+    transform: translate(-100%, -30%)
+    background-color: $colorBlack
+    &_list
+      width: 260px
+
+.menuLink
+  @media all and (max-width: 960px)
+    display: none
+
+.menuLinkIcon
+  display: none
+  @media all and (max-width: 960px)
+    margin: 42px 3px
+    display: inline-block
+    z-index: 100
+    position: relative
+
+details[open] > #summary-menu::after
+  content: "≡"
+  color: $colorWhite
+
+details summary::-webkit-details-marker
+  display: none
+
+details:focus,
+#summary-menu, #summary-price:focus
+  outline: 0
+  outline: none
+  list-style: none
+
+#summary-menu::-webkit-details-marker
+  display: none
+
+#summary-menu::after
+  content: "≡"
+  font-size: 48px
+  color: $colorWhite
+
+.promo
+  &__one
+    display: flex
+    align-items: center
+    background: url(/images/promo.jpg) center center fixed
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+    height: 900px
+    margin-bottom: 113px
+    @media all and (max-width: 1060px)
+      height: 460px
+  &__text
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    &_up
+      padding: 0 60px 0 12px
+      background-color: $colorBlack
+      clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%)
+      margin-bottom: 5px
+    &_down
+      padding: 0 60px 0 12px
+      background-color: #ffffff
+      clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%)
+      margin-bottom: 29px
+    &_min
+      margin-bottom: 29px
+  &__log1600-400
+    background: url(/images/promo1600-400.jpg) center center fixed
+    background-size: cover
+    height: 200px
+
+
+.about
+  display: flex
+  flex-direction: column
+  margin: 0 0 108px
+  &__header
+    display: flex
+    margin: 0 0 45px
+    &_text
+      width: 50%
+      @media all and (max-width: 820px)
+        width: 100%
+        text-align: center
+    &_info
+      background: url(/images/promoAbout.jpg) top fixed
+      width: 70%
+      background-size: contain
+      background-repeat: no-repeat
+      @media all and (max-width: 820px)
+        display: none
+  &__blocks
+    display: flex
+    justify-content: space-around
+    @media all and (max-width: 620px)
+      flex-wrap: wrap
+    &_block
+      display: flex
+      flex-direction: column
+      align-items: center
+      text-align: center
+      width: 220px
+    &_block:hover .about__service_border
+      background-color: $colorBlue
+    &_block:hover .about__service
+      background-color: $colorBlue
+      color: #ffffff
+    &_block:hover
+      animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both
+      @keyframes rotate-vert-center
+        0%
+          transform: rotateY(0)
+        100%
+          transform: rotateY(360deg)
+  &__service
+    font-size: 30px
+    color: $colorBlue
+    margin: 2px
+    background-color: #d9d9d9
+    clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 50% 100%, 0 80%, 0 20%)
+    &_border
+      padding: 25px 10px
+      margin: 2px
+      background-color: #ffffff
+      clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 50% 100%, 0 80%, 0 20%)
+    &_imgMin
+      width: 60px
+
+.warranty
+  margin: 43px 0
+  @media all and (max-width: 620px)
+    margin: 23px 4px
+  &__blocks
+    margin: 26px 0
+
+.gallery
+    background: url(/images/promoGallery.jpg) center center fixed
+    position: relative
+    background-size: cover
+    overflow: hidden
+    &_images
+      display: flex
+      flex-direction: column
+      align-items: center
+    &_img
+      width: 295px
+      height: 350px
+      object-fit: cover
+
+
+.feedback
+  display: flex
+  flex-direction: column
+  text-align-last: center
+  margin-bottom: 97px
+
+.form
+  display: flex
+  flex-direction: column
+  text-align-last: start
+  padding: 10px
+  margin-bottom: 5px
+  &__input
+    border: solid 1px #f3f2ef
+    padding: 10px
+    box-shadow: rgb(1 1 1 / 4%) 0 0 1px 1px
+  &__input:focus
+    outline: 1px solid $colorBlue
+    background-color: #EDF6F9
+
+
+.contact
+  display: flex
+  place-content: center
+  position: relative
+  background: url(/images/promo1600-400.jpg) center center fixed
+  background-size: cover
+  height: 500px
+  margin-bottom: 113px
+  &__block
+    background: #232425
+    border: solid 1px #3c3c3c
+    position: absolute
+    top: 60px
+    margin: 5px
+    padding: 30px 40px
+    box-shadow: rgb(1 1 1 / 13%) 4px 3px 4px 4px
+    @media all and (max-width: 320px)
+      padding: 25px 30px
+  &__form
+    display: flex
+    flex-direction: column
+    &_blocks-3
+      display: flex
+      justify-content: center
+      flex-wrap: wrap
+      text-align-last: center
+      margin-bottom: 20px
+    &_inputUp
+      height: 45px
+      margin: 0 0 0 0
+      border: solid 1px #3c3c3c
+      background-color: #232425
+    &_inputUp:focus
+      outline: 1px solid #495057
+      background-color: #343A40
+    &_block-message
+      margin: 0 0 0 0
+      border: solid 1px #3c3c3c
+      background-color: #232425
+    &_block-message:focus
+      outline: 1px solid #495057
+      background-color: #343A40
+
+.map
+  margin-bottom: 20px
+
+.footer
+  &__up
+    background: $colorBlue
+    box-shadow: rgb(1 1 1 / 17%) 7px 3px 7px 7px
+    &_img
+      display: flex
+      justify-content: space-around
+  &__logoAuto
+    width: 50px
+    height: 50px
+    padding: 10px
+    @media all and (max-width: 620px)
+      display: none
+  &__down
+    background-color: $colorBlack
+    &_flex
+      display: flex
+      align-items: center
+      justify-content: space-between
+      @media all and (max-width: 820px)
+        flex-direction: column
+        text-align: center
+    &_logo
+      display: flex
+      align-items: center
+      padding: 20px 0
+    &_text
+      padding-left: 22px
+
+
+.singleService
+  display: flex
+  justify-content: space-around
+  align-items: center
+  text-align: center
+  margin: 20px 0
+  @media all and (max-width: 960px)
+    flex-direction: column
+  &__img
+    margin: 5px 5px 5px 0
+    @media all and (max-width: 960px)
+      margin: 2px 2px 2px 2px
+    &_imgMax
+      width: 230px
+  &__info
+    margin: 5px 0 5px 5px
+    &_service
+      display: flex
+      align-items: center
+      justify-content: space-between
+      margin: 10px
+
+.admin
+  animation: scale-up-ver-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both
+  @keyframes scale-up-ver-top
+    0%
+      transform: scaleY(0.4)
+      transform-origin: 100% 0
+    100%
+      transform: scaleY(1)
+      transform-origin: 100% 0
+  &__category
+    display: flex
+    justify-content: space-between
+    align-items: center
+    @media all and (max-width: 960px)
+      flex-direction: column
+  &__categoryImg
+    width: 200px
+  &__feedbacks
+    display: flex
+    justify-content: space-between
+    align-items: center
+    @media all and (max-width: 960px)
+      flex-direction: column
+  &__blockTextFeedback
+    display: flex
+    flex-direction: column
+    width: 75%
+    padding: 5px
+    margin: 2px
+  &__links
+    display: flex
+    flex-wrap: wrap
+    width: 200px
+  &__gallery
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    @media all and (max-width: 1060px)
+      justify-content: center
+    &_OneDiv
+      display: flex
+      flex-direction: column
+      align-items: center
+    &_photo
+      width: 200px
+      height: 200px
+      margin: 5px
+  &__contact
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.fonts
+  font-weight: 700
+  &__headerLogo
+    font-size: 30px
+    color: $colorBlue
+    @media all and (max-width: 1060px)
+      font-size: 18px
+    @media all and (max-width: 320px)
+      font-size: 14px
+  &__fontsMin
+    font-size: 12px
+    font-weight: 500
+    color: $colorGreyLite
+    @media all and (max-width: 1060px)
+      font-size: 10px
+    @media all and (max-width: 320px)
+      font-size: 8px
+    &_phone
+      font-size: 18px
+      color: #ffffff
+      @media all and (max-width: 1060px)
+        font-size: 14px
+  &__headerUp
+    font-family: $OpenSans
+    font-size: 14px
+    line-height: 22px
+    font-weight: 600
+    color: #ffffff
+    @media all and (max-width: 1080px)
+      font-size: 12px
+    &_nav
+      text-transform: uppercase
+  &__promo
+    font-family: $OpenSans
+    font-size: 45px
+    line-height: 60px
+    @media all and (max-width: 1060px)
+      font-size: 35px
+      line-height: 40px
+    @media all and (max-width: 570px)
+      font-size: 25px
+      line-height: 24px
+    &_up
+      text-transform: uppercase
+      font-weight: 400
+      color: #fefefe
+    &_down
+      text-transform: uppercase
+      font-weight: 800
+      color: #373737
+    &_min
+      font-size: 20px
+      line-height: 30px
+      font-weight: 400
+      color: #fefefe
+      padding: 0 6px
+      @media all and (max-width: 1060px)
+        font-size: 14px
+      @media all and (max-width: 570px)
+        line-height: 20px
+  &__about
+    &_header
+      font-size: 30px
+      line-height: 55px
+      font-weight: 800
+      text-transform: uppercase
+      color: #333333
+      @media all and (max-width: 1060px)
+        font-size: 24px
+        line-height: 37px
+    &_main
+      font-family: $OpenSans
+      font-size: 16px
+      line-height: 26px
+      font-weight: 600
+      color: $colorGreyLite
+      padding: 0 6px
+      @media all and (max-width: 1060px)
+        font-size: 13px
+        text-align: center
+    &_service-head
+      font-size: 18px
+      line-height: 25px
+      color: #333333
+      @media all and (max-width: 1060px)
+        font-size: 15px
+    &_service-info
+      font-size: 15px
+      line-height: 26px
+      font-weight: 400
+      color: $colorGreyLite
+      @media all and (max-width: 1060px)
+        font-size: 12px
+    &_service-single
+      font-family: $OpenSans
+      font-size: 16px
+      line-height: 25px
+      font-weight: 600
+      color: #1d1b17
+      @media all and (max-width: 1060px)
+        font-size: 12px
+  &__service
+    font-family: $OpenSans
+    font-size: 17px
+    line-height: 26px
+    color: #ffffff
+    @media all and (max-width: 1060px)
+      font-size: 13px
+  &__warranty
+    font-family: $OpenSans
+    font-size: 24px
+    line-height: 40px
+    font-weight: 700
+    color: #1d1d1d
+  &__link
+    font-family: $OpenSans
+    font-size: 14px
+    line-height: 22px
+    text-transform: uppercase
+    color: #fefefe
+    @media all and (max-width: 1060px)
+      font-size: 12px
+  &__feedback
+    font-family: $OpenSans
+    font-size: 18px
+    line-height: 28px
+    font-weight: 400
+    font-style: italic
+    color: #333333
+    @media all and (max-width: 1060px)
+      font-size: 18px
+      line-height: 18px
+    &_labelInput
+      font-family: $OpenSans
+      font-size: 18px
+      font-weight: 400
+      @media all and (max-width: 1060px)
+        font-size: 16px
+  &__footer
+    font-family: $OpenSans
+    font-size: 12px
+    line-height: 2
+    color: $colorGreyLite
+    @media all and (max-width: 1060px)
+      font-size: 10px
+    &_PinkUppercase
+      text-transform: uppercase
+      font-weight: 500
+      color: $colorBlue
+
+
+.alertText
+  box-shadow: 0 14px 29px 0 rgb(1 1 1 / 16%)
+  text-align: center
+  margin: 20px  0
+  &__white
+    background-color: #ffffff
+  &__black
+    box-shadow: 0 14px 29px 0 rgb(1 1 1 / 40%)
+    background-color: #232425
+    color: #ffffff
+
+.check
+  padding: 5px
+  font-size: 20px
+
+.borderBlock
+  padding: 20px 5px
+  box-shadow: 0 0 15px 0 rgb(0 0 0 / 37%)
+  margin: 10px
+
+.alert
+  &__success
+    color: #155724
+    background-color: #d4edda
+    border-color: #c3e6cb
+  &__danger
+    color: #721c24
+    background-color: #f8d7da
+    border-color: #f5c6cb
+
+.submit
+  border: none
+  outline: none
+  margin: 1px 1px
+  padding: 10px 0
+  width: 200px
+  cursor: pointer
+  transition: 1s
+  text-align-last: center
+  &__del
+    color: #fff
+    background-color: #dc3545
+  &__edit
+    color: #212529
+    background-color: #ffc107
+  &__add
+    background-color: #28a745
+    &_unique
+      background-color: #40916C
+      width: 100%
+  &__input
+    background-color: #023E8A
+  &__img
+    background-color: #F8961E
+.submit:hover
+  box-shadow: 0 0 5px black
+  transform: scale(1.08)
+
+.link
+  padding: 10px 30px
+  background-color: $colorBlue
+.link:hover
+  background-color: $colorBlueLite
+  animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both
+  @keyframes rotate-vert-center
+    0%
+      transform: rotateY(0)
+    100%
+      transform: rotateY(360deg)
+
+.toBasketBtn
+  width: 30px
+  height: 30px
+  background: url(/images/icons/othere/cart.png) no-repeat
+  background-size: cover
+  border: none
+  cursor: pointer
+
+.basket
+  color: aliceblue
+  display: flex
+  align-items: center
+  justify-content: center
+  background: #023E8A
+  width: 175px
+  height: 170px
+  border-radius: 50%
+  right: 10%
+  bottom: 10%
+  position: fixed
+  z-index: 100
+  padding: 15px
+  box-shadow: rgb(1 1 1 / 13%) 4px 3px 4px 4px
+  @media all and (max-width: 1060px)
+    width: 140px
+    height: 120px
+
+.closeButtonBasket
+  position: absolute
+  right: 0
+  top: 0
+  height: 40px
+  width: 40px
+  background-color: #ffffff
+  border-radius: 50%
+  border: 3px #023E8A
+  cursor: pointer
+  @media all and (max-width: 1060px)
+    width: 30px
+    height: 30px
+
+.input__wrapper
+  width: 100%
+  position: relative
+  margin: 15px 0
+  text-align: center
+
+.input__file
+  width: 5px
+  opacity: 0
+  visibility: hidden
+  position: absolute
+
+.input__file-icon-wrapper
+  width: 30px
+  margin-right: 15px
+  display: flex
+  align-items: center
+  justify-content: center
+  border-right: 1px solid #fff
+
+.input__file-button-text
+  line-height: 1
+  margin-top: 1px
+
+.input__file-button
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  width: 210px
+  padding: 10px 0
+  cursor: pointer
+  margin: 0 10px
+  background-color: #FFD60A
+
+.hidden
+  display: none
+
+.active
+  width: 30px
